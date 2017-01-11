@@ -11,9 +11,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.FloatBuffer;
 
-/**
- * Created by Qontrol on 10.01.2017.
- */
 public abstract class ShaderProgram {
     private int programID;
     private int vertexShaderID;

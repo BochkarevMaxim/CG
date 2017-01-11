@@ -14,7 +14,6 @@ import java.io.IOException;
 public class Terrain {
 
     private static final float SIZE = 400;
-
     private static final int MAX_HEIGHT = 35;
     private static final int MIN_HEIGHT = 0;
     private static final int MAX_PIXEL_COLOUR = 256*256*256;
@@ -123,11 +122,11 @@ public class Terrain {
             }
         }
         int pointer = 0;
-        for(int gz=0;gz<VERTEX_COUNT-1;gz++){
-            for(int gx=0;gx<VERTEX_COUNT-1;gx++){
-                int topLeft = (gz*VERTEX_COUNT)+gx;
+        for(int gz = 0; gz < VERTEX_COUNT - 1; gz++){
+            for(int gx = 0; gx < VERTEX_COUNT-1; gx++){
+                int topLeft = (gz * VERTEX_COUNT)+gx;
                 int topRight = topLeft + 1;
-                int bottomLeft = ((gz+1)*VERTEX_COUNT)+gx;
+                int bottomLeft = ((gz + 1) * VERTEX_COUNT)+gx;
                 int bottomRight = bottomLeft + 1;
                 indices[pointer++] = topLeft;
                 indices[pointer++] = bottomLeft;

@@ -20,7 +20,7 @@ public class OBJLoader {
             System.err.println("Couldn't load file!");
             e.printStackTrace();
         }
-        BufferedReader reader = new BufferedReader(fr);
+        BufferedReader reader = new BufferedReader(fr != null ? fr : null);
         String line;
         List<Vector3f> vertices = new ArrayList<Vector3f>();
         List<Vector2f> textures = new ArrayList<Vector2f>();

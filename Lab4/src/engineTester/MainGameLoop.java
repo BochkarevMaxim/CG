@@ -19,12 +19,16 @@ import static textures.EntitiesInitializer.loadTextures;
 public class MainGameLoop {
 
     public static void main(String[] args) {
+
+        final Vector3f LIGHT_POSITION = new Vector3f(100, 2400, 100);
+        final Vector3f LIGHT_COLOR = new Vector3f(1, 1, 1);
+
         displayManager.createDisplay();
         Loader loader = new Loader();
 
         List<Entity> entities = new ArrayList<Entity>();
 
-        Light light = new Light(new Vector3f(100, 2400, 100), new Vector3f(1, 1, 1));
+        Light light = new Light(LIGHT_POSITION, new Vector3f(LIGHT_COLOR));
         Terrain terrain = new Terrain(0, 0, loader, new ModelTexture(loader.loadTexture("grass")),
                 "heightmap");
         loadTextures(loader, entities, terrain);
@@ -43,7 +47,6 @@ public class MainGameLoop {
             renderer.render(light, camera);
             displayManager.updateDisplay();
         }
-
         renderer.cleanUp();
         loader.cleanUp();
 

@@ -1,8 +1,5 @@
 package textures;
 
-/**
- * Created by Qontrol on 10.01.2017.
- */
 public class ModelTexture {
 
     private  int textureID;
