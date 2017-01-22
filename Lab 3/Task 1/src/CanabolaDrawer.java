@@ -1,3 +1,4 @@
+import Shaders.ShaderCompileException;
 import Shaders.ShaderProgram;
 import Shaders.ShaderType;
 import Utils.Function2d;
@@ -75,8 +76,11 @@ public class CanabolaDrawer extends GLCanvas implements GLEventListener {
             int twist = shaderProgram.findUniform(gl, "TWIST");
             gl.glUniform1f(twist, twistController.getCurrentTwistValue());
         }
+        catch (ShaderCompileException e){
+            System.out.println("Could not compile shader!");
+        }
         catch (Exception e){
-            e.printStackTrace();
+            System.out.println("There is another problem");
         }
 
         gl.glPolygonMode(GL2.GL_FRONT_AND_BACK, GL2.GL_LINE);
